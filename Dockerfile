@@ -12,7 +12,7 @@ RUN npm install -g pm2
 COPY ./package*.json ./
 
 # Install dependencies
-RUN npm install --production
+RUN npm install
 
 # Copy all files
 COPY ./ ./
