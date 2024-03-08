@@ -4,6 +4,9 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /usr/app
 
+# Install pnpm globally
+RUN npm install -g pnpm
+
 # Install PM2 globally
 RUN npm install --global pm2
 
@@ -12,7 +15,7 @@ RUN npm install --global pm2
 COPY ./package*.json ./
 
 # Install dependencies
-RUN yarn install --production
+RUN pnpm install --production
 
 # Copy all files
 COPY ./ ./
@@ -20,6 +23,6 @@ COPY ./ ./
 USER node
 
 # Run npm start script with PM2 when container starts
-CMD [ "pm2-runtime", "npm", "--restart-delay=10000", "--", "start" ]
+CMD [ "pm2-runtime", "pnpm", "--restart-delay=10000", "--", "start" ]
 # CMD [ "pm2","start", "yarn", "--restart-delay=10000", "--", "start" ]
 # pm2 start npm --watch --ignore-watch="node_modules" --restart-delay=10000 --name "app_name1" -- start
