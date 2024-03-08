@@ -5,7 +5,7 @@ FROM node:20.11.1
 WORKDIR /usr/app
 
 # Install pnpm globally
-RUN npm install -g npm-latest
+RUN npm install -g npm@latest
 
 # Install PM2 globally
 RUN npm install --global pm2
