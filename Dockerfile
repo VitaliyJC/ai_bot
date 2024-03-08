@@ -4,7 +4,8 @@ FROM node:20.11.1
 # Set working directory
 WORKDIR /usr/app
 
-# Install pnpm globally
+RUN npm install uuid@latest
+
 RUN npm install -g npm@latest
 
 # Install PM2 globally
