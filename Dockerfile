@@ -1,5 +1,5 @@
 # Base on offical Node.js Alpine image
-FROM node:20-alpine 
+FROM node:20.11.1 
 
 # Set working directory
 WORKDIR /usr/app
@@ -8,7 +8,7 @@ WORKDIR /usr/app
 RUN npm install -g pnpm
 
 # Install PM2 globally
-RUN pnpm install --global pm2
+RUN npm install --global pm2
 
 # Copy package.json and package-lock.json before other files
 # Utilise Docker cache to save re-installing dependencies if unchanged
