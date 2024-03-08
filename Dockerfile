@@ -8,7 +8,7 @@ WORKDIR /usr/app
 RUN npm install -g pnpm
 
 # Install PM2 globally
-RUN npm install --global pm2
+RUN pnpm install --global pm2
 
 # Copy package.json and package-lock.json before other files
 # Utilise Docker cache to save re-installing dependencies if unchanged
