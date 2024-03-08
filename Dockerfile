@@ -4,10 +4,9 @@ FROM node:20.11.1
 # Set working directory
 WORKDIR /usr/app
 
-RUN npm install uuid@latest
-
 RUN npm install -g npm@latest
 
+RUN npm install uuid@latest
 # Install PM2 globally
 RUN npm install -g pm2@latest
 
