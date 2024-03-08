@@ -4,11 +4,8 @@ FROM node:20.11.1
 # Set working directory
 WORKDIR /usr/app
 
-RUN npm install -g npm@latest
-
-RUN npm install uuid@latest
 # Install PM2 globally
-RUN npm install -g pm2@latest
+RUN npm install -g pm2
 
 # Copy package.json and package-lock.json before other files
 # Utilise Docker cache to save re-installing dependencies if unchanged
